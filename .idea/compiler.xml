@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="mall-manage-web" />
+        <module name="mall-api" />
+        <module name="mall-common-util" />
+        <module name="mall-manage-service" />
+        <module name="mall-user-web" />
+        <module name="mall-web-util" />
+        <module name="mall-user-service" />
+        <module name="mall-service-util" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="mall-api" target="1.8" />
+      <module name="mall-common-util" target="1.8" />
+      <module name="mall-manage-service" target="1.8" />
+      <module name="mall-manage-web" target="1.8" />
+      <module name="mall-parent" target="1.8" />
+      <module name="mall-service-util" target="1.8" />
+      <module name="mall-user-service" target="1.8" />
+      <module name="mall-user-web" target="1.8" />
+      <module name="mall-web-util" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="mall-manage-service" options="" />
+      <module name="mall-manage-web" options="" />
+      <module name="mall-user-service" options="" />
+      <module name="mall-user-web" options="" />
+    </option>
+  </component>
+</project>
