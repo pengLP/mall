@@ -1,0 +1,17 @@
+package com.lp.mall.service;
+
+import com.lp.mall.bean.PmsProductImage;
+import com.lp.mall.bean.PmsProductInfo;
+import com.lp.mall.bean.PmsProductSaleAttr;
+
+import java.util.List;
+
+public interface SpuService {
+    List<PmsProductInfo> spuList(String catalog3Id);
+
+    void saveSpuInfo(PmsProductInfo pmsProductInfo);
+
+    List<PmsProductSaleAttr> spuSaleAttrList(String spuId);
+
+    List<PmsProductImage> spuImageList(String spuId);
+}

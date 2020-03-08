@@ -3,6 +3,8 @@ package com.lp.mall.manage.controller;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.lp.mall.bean.PmsBaseAttrInfo;
 import com.lp.mall.bean.PmsBaseAttrValue;
+import com.lp.mall.bean.PmsBaseSaleAttr;
+import com.lp.mall.bean.PmsProductInfo;
 import com.lp.mall.service.AttrService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -39,5 +41,15 @@ public class AttrController {
 
         List<PmsBaseAttrValue> pmsBaseAttrValues = attrService.getAttrValueList(attrId);
         return pmsBaseAttrValues;
+    }
+
+
+
+    @RequestMapping("baseSaleAttrList")
+    @ResponseBody
+    public List<PmsBaseSaleAttr> baseSaleAttrList(){
+
+        List<PmsBaseSaleAttr> pmsBaseSaleAttrs = attrService.baseSaleAttrList();
+        return pmsBaseSaleAttrs;
     }
 }

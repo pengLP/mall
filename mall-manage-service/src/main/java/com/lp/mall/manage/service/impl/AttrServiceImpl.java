@@ -7,6 +7,7 @@ import com.lp.mall.bean.PmsBaseAttrValue;
 import com.lp.mall.bean.PmsBaseSaleAttr;
 import com.lp.mall.manage.mapper.PmsBaseAttrInfoMapper;
 import com.lp.mall.manage.mapper.PmsBaseAttrValueMapper;
+import com.lp.mall.manage.mapper.PmsBaseSaleAttrMapper;
 import com.lp.mall.service.AttrService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,9 @@ public class AttrServiceImpl implements AttrService {
 
     @Autowired
     PmsBaseAttrValueMapper pmsBaseAttrValueMapper;
+
+    @Autowired
+    PmsBaseSaleAttrMapper pmsBaseSaleAttrMapper;
 
 
     @Override
@@ -81,6 +85,6 @@ public class AttrServiceImpl implements AttrService {
 
     @Override
     public List<PmsBaseSaleAttr> baseSaleAttrList() {
-        return null;
+        return pmsBaseSaleAttrMapper.selectAll();
     }
 }
