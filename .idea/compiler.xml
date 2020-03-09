@@ -6,17 +6,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="mall-manage-web" />
         <module name="mall-api" />
+        <module name="fastdfs-client-java" />
         <module name="mall-common-util" />
-        <module name="mall-manage-service" />
         <module name="mall-user-web" />
+        <module name="mall-manage-service" />
+        <module name="mall-manage-web" />
         <module name="mall-web-util" />
         <module name="mall-user-service" />
         <module name="mall-service-util" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="fastdfs-client-java" target="1.6" />
       <module name="mall-api" target="1.8" />
       <module name="mall-common-util" target="1.8" />
       <module name="mall-manage-service" target="1.8" />
