@@ -16,6 +16,7 @@
         <option value="$PROJECT_DIR$/mall-manage-service/pom.xml" />
         <option value="$PROJECT_DIR$/mall-manage-web/pom.xml" />
         <option value="$PROJECT_DIR$/fastdfs-client-java/pom.xml" />
+        <option value="$PROJECT_DIR$/mall-item-web/pom.xml" />
       </list>
     </option>
   </component>

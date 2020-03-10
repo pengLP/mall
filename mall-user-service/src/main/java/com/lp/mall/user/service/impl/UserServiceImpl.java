@@ -31,6 +31,9 @@ public class UserServiceImpl implements UserService {
         UmsMemberReceiveAddress umsMemberReceiveAddress = new UmsMemberReceiveAddress();
         umsMemberReceiveAddress.setMemberId(memberId);
         List<UmsMemberReceiveAddress> umsMemberReceiveAddresses = umsMemberReceiverAddressMapper.select(umsMemberReceiveAddress);
+
+
+
         return umsMemberReceiveAddresses;
     }
 
