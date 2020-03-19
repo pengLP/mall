@@ -10,6 +10,8 @@
       <module fileurl="file://$PROJECT_DIR$/mall-manage-service/mall-manage-service.iml" filepath="$PROJECT_DIR$/mall-manage-service/mall-manage-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/mall-manage-web/mall-manage-web.iml" filepath="$PROJECT_DIR$/mall-manage-web/mall-manage-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/mall-parent/mall-parent.iml" filepath="$PROJECT_DIR$/mall-parent/mall-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mall-search-service/mall-search-service.iml" filepath="$PROJECT_DIR$/mall-search-service/mall-search-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mall-search-web/mall-search-web.iml" filepath="$PROJECT_DIR$/mall-search-web/mall-search-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/mall-service-util/mall-service-util.iml" filepath="$PROJECT_DIR$/mall-service-util/mall-service-util.iml" />
       <module fileurl="file://$PROJECT_DIR$/mall-user-service/mall-user-service.iml" filepath="$PROJECT_DIR$/mall-user-service/mall-user-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/mall-user-web/mall-user-web.iml" filepath="$PROJECT_DIR$/mall-user-web/mall-user-web.iml" />

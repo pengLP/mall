@@ -10,3 +10,6 @@ mall-manage-web: 8081
 mall-manage-service: 8071
 
 mall-item-web 前台的详情展示  8082
+
+mall-search-web 搜索服务前台 8083
+mall-search-service 搜索服务后台 8074

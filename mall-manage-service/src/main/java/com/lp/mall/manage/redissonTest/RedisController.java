@@ -24,17 +24,24 @@ public class RedisController {
     @ResponseBody
     public String testRedisson() {
         Jedis jedis = redisUtil.getJedis();
-
-        String v = jedis.get("k");
-        if (StringUtils.isBlank(v)) {
-            v = "1";
-        }
-        System.out.println("=>" + v);
-        jedis.set("k" , (Integer.parseInt(v) + 1) + "");
-        jedis.close();;
-
+        /*可重锁*/
         RLock lock = redissonClient.getLock("lock");
-        return "123213131";
+        lock.lock();
+        try {
+            String v = jedis.get("k");
+            if (StringUtils.isBlank(v)) {
+                v = "1";
+            }
+            System.out.println("=>" + v);
+            jedis.set("k" , (Integer.parseInt(v) + 1) + "");
+            jedis.close();
+        }finally {
+
+            lock.unlock();
+        }
+
+
+        return "success";
     }
 
 }
