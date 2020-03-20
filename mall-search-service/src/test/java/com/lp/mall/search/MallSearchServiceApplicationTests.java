@@ -35,7 +35,7 @@ public class MallSearchServiceApplicationTests {
 
     @Test
     public void contextLoads() throws IOException {
-        get();
+        put();
     }
 
     public void put() throws IOException {

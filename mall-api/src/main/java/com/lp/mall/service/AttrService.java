@@ -5,6 +5,7 @@ import com.lp.mall.bean.PmsBaseAttrValue;
 import com.lp.mall.bean.PmsBaseSaleAttr;
 
 import java.util.List;
+import java.util.Set;
 
 public interface AttrService {
 
@@ -16,4 +17,5 @@ public interface AttrService {
 
     List<PmsBaseSaleAttr> baseSaleAttrList();
 
+    List<PmsBaseAttrInfo> getAttrValueListByValueId(Set<String> valueIdSet);
 }
