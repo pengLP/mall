@@ -19,6 +19,8 @@
         <option value="$PROJECT_DIR$/mall-item-web/pom.xml" />
         <option value="$PROJECT_DIR$/mall-search-web/pom.xml" />
         <option value="$PROJECT_DIR$/mall-search-service/pom.xml" />
+        <option value="$PROJECT_DIR$/mall-cart-service/pom.xml" />
+        <option value="$PROJECT_DIR$/mall-cart-web/pom.xml" />
       </list>
     </option>
   </component>

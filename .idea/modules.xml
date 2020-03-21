@@ -5,6 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/fastdfs-client-java/fastdfs-client-java.iml" filepath="$PROJECT_DIR$/fastdfs-client-java/fastdfs-client-java.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/mall.iml" filepath="$PROJECT_DIR$/.idea/mall.iml" />
       <module fileurl="file://$PROJECT_DIR$/mall-api/mall-api.iml" filepath="$PROJECT_DIR$/mall-api/mall-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mall-cart-service/mall-cart-service.iml" filepath="$PROJECT_DIR$/mall-cart-service/mall-cart-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mall-cart-web/mall-cart-web.iml" filepath="$PROJECT_DIR$/mall-cart-web/mall-cart-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/mall-common-util/mall-common-util.iml" filepath="$PROJECT_DIR$/mall-common-util/mall-common-util.iml" />
       <module fileurl="file://$PROJECT_DIR$/mall-item-web/mall-item-web.iml" filepath="$PROJECT_DIR$/mall-item-web/mall-item-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/mall-manage-service/mall-manage-service.iml" filepath="$PROJECT_DIR$/mall-manage-service/mall-manage-service.iml" />
