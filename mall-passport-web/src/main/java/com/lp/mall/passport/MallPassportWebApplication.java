@@ -1,13 +1,13 @@
-package com.lp.mall.search;
+package com.lp.mall.passport;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MallSearchWebApplication {
+public class MallPassportWebApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(MallSearchWebApplication.class, args);
+        SpringApplication.run(MallPassportWebApplication.class, args);
     }
 
 }

@@ -2,6 +2,7 @@ package com.lp.mall.cart.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.fastjson.JSON;
+import com.lp.mall.annotations.LoginRequired;
 import com.lp.mall.bean.OmsCartItem;
 import com.lp.mall.bean.PmsSkuInfo;
 import com.lp.mall.service.CartService;
@@ -29,6 +30,18 @@ public class CartController {
     @Reference
     CartService cartService;
 
+
+    @RequestMapping("toTrade")
+    @LoginRequired(loginSuccess = true)
+    public String toTrade(HttpServletRequest request, HttpServletResponse response, HttpSession session, ModelMap modelMap) {
+
+        String memberId = (String)request.getAttribute("memberId");
+        String nickname = (String)request.getAttribute("nickname");
+
+        System.out.println(nickname);
+        return "toTrade";
+    }
+
     @RequestMapping("addToCart")
     public String addToCart(String skuId, int quantity, HttpServletRequest request, HttpServletResponse response){
         List<OmsCartItem> omsCartItems = new ArrayList<>();
@@ -53,7 +66,8 @@ public class CartController {
         omsCartItem.setQuantity(new BigDecimal(quantity));
 
         // 判断用户是否登录
-        String memberId = "1";//"1";
+        String memberId = (String)request.getAttribute("memberId");
+        String nickname = (String)request.getAttribute("nickname");
 
         if (StringUtils.isBlank(memberId)) {
             // 用户没有登录
@@ -91,7 +105,7 @@ public class CartController {
             if(omsCartItemFromDb==null){
                 // 该用户没有添加过当前商品
                 omsCartItem.setMemberId(memberId);
-                omsCartItem.setMemberNickname("test小明");
+                omsCartItem.setMemberNickname(nickname);
                 omsCartItem.setQuantity(new BigDecimal(quantity));
                 cartService.addCart(omsCartItem);
 
@@ -108,10 +122,11 @@ public class CartController {
         return "redirect:/success.html";
     }
 
+
     @RequestMapping("checkCart")
     public String checkCart(String isChecked,String skuId,HttpServletRequest request, HttpServletResponse response, HttpSession session, ModelMap modelMap) {
 
-        String memberId = "1";
+        String memberId = (String)request.getAttribute("memberId");
 
         // 调用服务，修改状态
         OmsCartItem omsCartItem = new OmsCartItem();
@@ -131,7 +146,11 @@ public class CartController {
     public String cartList(HttpServletRequest request, HttpServletResponse response, HttpSession session, ModelMap modelMap) {
 
         List<OmsCartItem> omsCartItems = new ArrayList<>();
-        String memberId = "1";
+        // 判断用户是否登录
+        String memberId = (String)request.getAttribute("memberId");
+        String nickname = (String)request.getAttribute("nickname");
+
+        System.out.println(memberId);
 
         if(StringUtils.isNotBlank(memberId)){
             // 已经登录查询db

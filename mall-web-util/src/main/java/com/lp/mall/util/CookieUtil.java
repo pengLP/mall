@@ -12,7 +12,7 @@ import java.net.URLEncoder;
  */
 public class CookieUtil {
     /***
-     * 获得cookie中的值，默认为主ip：www.gmall.com
+     * 获得cookie中的值，默认为主ip：
      * @param request
      * @param cookieName
      * @param isDecoder
@@ -49,7 +49,7 @@ public class CookieUtil {
      * @param cookieMaxage
      * @param isEncode
      */
-    public static   void setCookie(HttpServletRequest request, HttpServletResponse response, String cookieName, String cookieValue, int cookieMaxage, boolean isEncode) {
+    public static  void setCookie(HttpServletRequest request, HttpServletResponse response, String cookieName, String cookieValue, int cookieMaxage, boolean isEncode) {
         try {
             if (cookieValue == null) {
                 cookieValue = "";
@@ -59,8 +59,8 @@ public class CookieUtil {
             Cookie cookie = new Cookie(cookieName, cookieValue);
             if (cookieMaxage >= 0)
                 cookie.setMaxAge(cookieMaxage);
-            if (null != request)// 设置域名的cookie
-                cookie.setDomain(getDomainName(request));
+            /*if (null != request)// 设置域名的cookie
+                cookie.setDomain("/");*/
             // 在域名的根路径下保存
             cookie.setPath("/");
             response.addCookie(cookie);

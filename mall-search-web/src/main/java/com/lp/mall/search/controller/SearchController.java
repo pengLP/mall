@@ -1,6 +1,7 @@
 package com.lp.mall.search.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.lp.mall.annotations.LoginRequired;
 import com.lp.mall.bean.*;
 import com.lp.mall.service.AttrService;
 import com.lp.mall.service.SearchService;
@@ -146,6 +147,7 @@ public class SearchController {
     }
 
     @RequestMapping("index")
+    @LoginRequired(loginSuccess = false)
     public String index(){
         return "index";
     }
