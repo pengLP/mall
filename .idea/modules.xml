@@ -11,6 +11,8 @@
       <module fileurl="file://$PROJECT_DIR$/mall-item-web/mall-item-web.iml" filepath="$PROJECT_DIR$/mall-item-web/mall-item-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/mall-manage-service/mall-manage-service.iml" filepath="$PROJECT_DIR$/mall-manage-service/mall-manage-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/mall-manage-web/mall-manage-web.iml" filepath="$PROJECT_DIR$/mall-manage-web/mall-manage-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mall-order-service/mall-order-service.iml" filepath="$PROJECT_DIR$/mall-order-service/mall-order-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mall-order-web/mall-order-web.iml" filepath="$PROJECT_DIR$/mall-order-web/mall-order-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/mall-parent/mall-parent.iml" filepath="$PROJECT_DIR$/mall-parent/mall-parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/mall-passport-web/mall-passport-web.iml" filepath="$PROJECT_DIR$/mall-passport-web/mall-passport-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/mall-search-service/mall-search-service.iml" filepath="$PROJECT_DIR$/mall-search-service/mall-search-service.iml" />

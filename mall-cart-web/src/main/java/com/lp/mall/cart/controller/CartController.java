@@ -43,6 +43,7 @@ public class CartController {
     }
 
     @RequestMapping("addToCart")
+    @LoginRequired(loginSuccess = true)
     public String addToCart(String skuId, int quantity, HttpServletRequest request, HttpServletResponse response){
         List<OmsCartItem> omsCartItems = new ArrayList<>();
 
@@ -66,7 +67,7 @@ public class CartController {
         omsCartItem.setQuantity(new BigDecimal(quantity));
 
         // 判断用户是否登录
-        String memberId = (String)request.getAttribute("memberId");
+        String memberId = "1";
         String nickname = (String)request.getAttribute("nickname");
 
         if (StringUtils.isBlank(memberId)) {
@@ -143,6 +144,7 @@ public class CartController {
 
 
     @RequestMapping("cartList")
+    @LoginRequired(loginSuccess = true)
     public String cartList(HttpServletRequest request, HttpServletResponse response, HttpSession session, ModelMap modelMap) {
 
         List<OmsCartItem> omsCartItems = new ArrayList<>();

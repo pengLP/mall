@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import redis.clients.jedis.Jedis;
 import com.lp.mall.util.RedisUtil;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
 
@@ -94,24 +95,20 @@ public class SkuServiceImpl implements SkuService {
         String skuKey = "sku:"+skuId+":info";
         String skuJson = jedis.get(skuKey);
 
-        if(StringUtils.isNotBlank(skuJson)){//if(skuJson!=null&&!skuJson.equals(""))
+        if(StringUtils.isNotBlank(skuJson)){    //if(skuJson!=null&&!skuJson.equals(""))
             System.out.println("ip为"+ip+"的用户:"+Thread.currentThread().getName()+"从缓存中获取商品详情");
-
             pmsSkuInfo = JSON.parseObject(skuJson, PmsSkuInfo.class);
         }else{
             // 如果缓存中没有，查询mysql
-            System.out.println("ip为"+ip+"的用户:"+Thread.currentThread().getName()+"发现缓存中没有，申请缓存的分布式锁："+"sku:" + skuId + ":lock");
-
+            System.out.println("ip为"+ip+"的用户:"+Thread.currentThread().getName() + "发现缓存中没有，申请缓存的分布式锁："+"sku:" + skuId + ":lock");
             // 设置分布式锁
             String token = UUID.randomUUID().toString();
             String OK = jedis.set("sku:" + skuId + ":lock", token, "nx", "px", 10*1000);// 拿到锁的线程有10秒的过期时间
-            if(StringUtils.isNotBlank(OK)&&OK.equals("OK")){
+            if(StringUtils.isNotBlank(OK)&&OK.equals("OK")) {
                 // 设置成功，有权在10秒的过期时间内访问数据库
                 System.out.println("ip为"+ip+"的用户:"+Thread.currentThread().getName()+"有权在10秒的过期时间内访问数据库："+"sku:" + skuId + ":lock");
-
                 pmsSkuInfo =  getSkuByIdFromDb(skuId);
-
-                if(pmsSkuInfo!=null){
+                if(pmsSkuInfo!=null) {
                     // mysql查询结果存入redis
                     jedis.set("sku:"+skuId+":info",JSON.toJSONString(pmsSkuInfo));
                 }else{
@@ -123,13 +120,11 @@ public class SkuServiceImpl implements SkuService {
                 // 在访问mysql后，将mysql的分布锁释放
                 System.out.println("ip为"+ip+"的用户:"+Thread.currentThread().getName()+"使用完毕，将锁归还："+"sku:" + skuId + ":lock");
                 String lockToken = jedis.get("sku:" + skuId + ":lock");
-                if(StringUtils.isNotBlank(lockToken)&&lockToken.equals(token)){
+                if(StringUtils.isNotBlank(lockToken)&&lockToken.equals(token)) {
                     //jedis.eval("lua");可与用lua脚本，在查询到key的同时删除该key，防止高并发下的意外的发生
                     jedis.del("sku:" + skuId + ":lock");// 用token确认删除的是自己的sku的锁
                 }
-
-
-            }else{
+            } else {
                 // 设置失败，自旋（该线程在睡眠几秒后，重新尝试访问本方法）
                 System.out.println("ip为"+ip+"的用户:"+Thread.currentThread().getName()+"没有拿到锁，开始自旋");
 
@@ -162,5 +157,22 @@ public class SkuServiceImpl implements SkuService {
             pmsSkuInfo.setSkuAttrValueList(select);
         }
         return pmsSkuInfos;
+    }
+
+    @Override
+    public boolean checkPrice(String productSkuId, BigDecimal productPrice) {
+
+        boolean b = false;
+
+        PmsSkuInfo pmsSkuInfo = new PmsSkuInfo();
+        pmsSkuInfo.setId(productSkuId);
+        PmsSkuInfo pmsSkuInfo1 = pmsSkuInfoMapper.selectOne(pmsSkuInfo);
+
+        BigDecimal price = pmsSkuInfo1.getPrice();
+        System.out.println(price + "   " + productPrice);
+        if(price.compareTo(productPrice)==0){
+            b = true;
+        }
+        return b;
     }
 }

@@ -21,8 +21,8 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
     private String url = "http://127.0.0.1:8085";
 
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        System.out.println("拦截成功");
 
+        System.out.println("拦截开始");
         //判断被拦截请求的访问的方法的注解（是否需要拦截的）
         HandlerMethod hm = (HandlerMethod) handler;
         LoginRequired methodAnnotation = hm.getMethodAnnotation(LoginRequired.class);
@@ -31,7 +31,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
         if (methodAnnotation == null) {
             return true;
         }
-
+        System.out.println("拦截成功");
         String token = "";
 
         String oldToken = CookieUtil.getCookieValue(request, "oldToken", true);

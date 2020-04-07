@@ -13,8 +13,10 @@
         <module name="mall-item-web" />
         <module name="mall-web-util" />
         <module name="mall-common-util" />
+        <module name="mall-order-service" />
         <module name="fastdfs-client-java" />
         <module name="mall-cart-service" />
+        <module name="mall-order-web" />
         <module name="mall-manage-web" />
         <module name="mall-search-service" />
         <module name="mall-passport-web" />
@@ -32,6 +34,8 @@
       <module name="mall-item-web" target="1.8" />
       <module name="mall-manage-service" target="1.8" />
       <module name="mall-manage-web" target="1.8" />
+      <module name="mall-order-service" target="1.8" />
+      <module name="mall-order-web" target="1.8" />
       <module name="mall-parent" target="1.8" />
       <module name="mall-passport-web" target="1.8" />
       <module name="mall-search-service" target="1.8" />
@@ -49,6 +53,8 @@
       <module name="mall-item-web" options="" />
       <module name="mall-manage-service" options="" />
       <module name="mall-manage-web" options="" />
+      <module name="mall-order-service" options="" />
+      <module name="mall-order-web" options="" />
       <module name="mall-passport-web" options="" />
       <module name="mall-search-service" options="" />
       <module name="mall-search-web" options="" />

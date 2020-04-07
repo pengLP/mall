@@ -110,6 +110,7 @@ public class PassportController {
         }else{
             map.put("status","fail");
         }
+        System.out.println(map);
 
         return JSON.toJSONString(map);
 

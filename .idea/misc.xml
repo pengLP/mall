@@ -22,6 +22,8 @@
         <option value="$PROJECT_DIR$/mall-cart-service/pom.xml" />
         <option value="$PROJECT_DIR$/mall-cart-web/pom.xml" />
         <option value="$PROJECT_DIR$/mall-passport-web/pom.xml" />
+        <option value="$PROJECT_DIR$/mall-order-web/pom.xml" />
+        <option value="$PROJECT_DIR$/mall-order-service/pom.xml" />
       </list>
     </option>
   </component>

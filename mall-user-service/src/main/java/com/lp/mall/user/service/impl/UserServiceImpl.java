@@ -23,6 +23,7 @@ public class UserServiceImpl implements UserService {
     @Autowired
     UmsMemberReceiverAddressMapper umsMemberReceiverAddressMapper;
 
+
     @Autowired
     RedisUtil redisUtil;
 
@@ -98,5 +99,13 @@ public class UserServiceImpl implements UserService {
     public UmsMember checkOauthUser(UmsMember umsCheck) {
         UmsMember umsMember = userMapper.selectOne(umsCheck);
         return umsMember;
+    }
+
+    @Override
+    public UmsMemberReceiveAddress getReceiveAddressById(String receiveAddressId) {
+        UmsMemberReceiveAddress umsMemberReceiveAddress = new UmsMemberReceiveAddress();
+        umsMemberReceiveAddress.setId(receiveAddressId);
+        UmsMemberReceiveAddress umsMemberReceiveAddress1 = umsMemberReceiverAddressMapper.selectOne(umsMemberReceiveAddress);
+        return umsMemberReceiveAddress1;
     }
 }
